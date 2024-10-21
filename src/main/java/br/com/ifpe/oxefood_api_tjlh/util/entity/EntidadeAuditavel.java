@@ -1,21 +1,40 @@
 package br.com.ifpe.oxefood_api_tjlh.util.entity;
 
 import java.time.LocalDate;
-
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.Column;
+import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.Version;
 import lombok.Getter;
 import lombok.Setter;
 
+@SuppressWarnings("serial")
 @Getter
 @Setter
+@MappedSuperclass
 public abstract class EntidadeAuditavel extends EntidadeNegocio {
+  
+   @JsonIgnore
+   @Version
+   private Long versao;
 
-  private Long versao;
+   @JsonIgnore
+   @CreatedDate
+   private LocalDate dataCriacao;
 
-  private LocalDate dataCriacao;
+   @JsonIgnore
+   @LastModifiedDate
+   private LocalDate dataUltimaModificacao;
 
-  private LocalDate dataUltimaModificacao;
+   @JsonIgnore
+   @Column
+   private Long criadoPor;
 
-  private Long criadoPor;
+   @JsonIgnore
+   @Column
+   private Long ultimaModificacaoPor;
 
-  private Long ultimaModificacaoPor;
 }
+
