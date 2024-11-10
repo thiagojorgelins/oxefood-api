@@ -1,6 +1,7 @@
 package br.com.ifpe.oxefood_api_tjlh.model.cliente;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import jakarta.transaction.Transactional;
 
@@ -22,4 +23,11 @@ public class ClienteService {
     return repository.save(cliente);
   }
 
+  public List<Cliente> listarTodos() {
+    return repository.findAll();
+  }
+
+  public Cliente obterPorID(Long id) {
+    return repository.findById(id).get();
+  }
 }
