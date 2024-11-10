@@ -4,8 +4,10 @@ import java.time.LocalDate;
 
 import org.hibernate.annotations.SQLRestriction;
 
+import br.com.ifpe.oxefood_api_tjlh.model.endereco.Endereco;
 import br.com.ifpe.oxefood_api_tjlh.util.entity.EntidadeAuditavel;
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -51,4 +53,6 @@ public class Entregador extends EntidadeAuditavel{
   @Column
   private Boolean ativo;
 
+  @Embedded
+  private Endereco endereco;
 }

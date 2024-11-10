@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import br.com.ifpe.oxefood_api_tjlh.model.endereco.Endereco;
 import br.com.ifpe.oxefood_api_tjlh.model.entregador.Entregador;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -34,6 +35,8 @@ public class EntregadorRequest {
 
   private Boolean ativo;
 
+  private Endereco endereco;
+
   public Entregador build() {
 
     return Entregador.builder()
@@ -46,6 +49,7 @@ public class EntregadorRequest {
         .qtdEntregasRealizadas(qtdEntregasRealizadas)
         .valorFrete(valorFrete)
         .ativo(ativo)
+        .endereco(endereco)
         .build();
   }
 }

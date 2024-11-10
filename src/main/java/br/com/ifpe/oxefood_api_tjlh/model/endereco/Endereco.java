@@ -2,24 +2,26 @@ package br.com.ifpe.oxefood_api_tjlh.model.endereco;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Embeddable
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Endereco {
 
-  private String enderecoNumero;
+  private String numero;
 
-  private String enderecoRua;
+  private String rua;
 
-  private String enderecoBairro;
+  private String bairro;
 
-  private String enderecoCidade;
+  private String cidade;
 
-  private String enderecoCep;
+  private String cep;
 
-  private String enderecoUF;
+  private String uf;
 
-  private String enderecoCompleto;
+  private String complemento;
 }
