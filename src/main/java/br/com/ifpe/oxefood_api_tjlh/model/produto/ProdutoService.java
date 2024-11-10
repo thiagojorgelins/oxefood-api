@@ -1,15 +1,17 @@
 package br.com.ifpe.oxefood_api_tjlh.model.produto;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.ifpe.oxefood_api_tjlh.model.cliente.Cliente;
 import jakarta.transaction.Transactional;
 
 @Service
 public class ProdutoService {
-  
+
   @Autowired
   private ProdutoRepository repository;
 
@@ -22,4 +24,11 @@ public class ProdutoService {
     return repository.save(produto);
   }
 
+  public List<Produto> listarTodos() {
+    return repository.findAll();
+  }
+
+  public Produto obterPorID(Long id) {
+    return repository.findById(id).get();
+  }
 }
