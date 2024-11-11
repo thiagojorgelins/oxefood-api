@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.ifpe.oxefood_api_tjlh.api.cliente.ClienteRequest;
-import br.com.ifpe.oxefood_api_tjlh.model.cliente.Cliente;
+
 import br.com.ifpe.oxefood_api_tjlh.model.produto.Produto;
 import br.com.ifpe.oxefood_api_tjlh.model.produto.ProdutoService;
 
